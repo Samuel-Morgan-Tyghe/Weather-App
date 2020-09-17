@@ -1,65 +1,55 @@
 const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { SourceMapDevToolPlugin } = require("webpack");
 
 
 module.exports = {
-entry: './src/Typescript/index.ts',
-
+  
+watch: true,
+devtool: 'inline-source-map',
+entry: './src/Typescript',
+resolve: {
+  extensions: [ '.tsx', '.ts', '.js' ],
+},
 output: {
   filename: 'js/index.min.js',
-  publicPath: '/public/',
+  publicPath: '/',
   path: path.resolve(__dirname, 'public'),
+  libraryTarget: "this",
+
+
 },
 
 module: {
-
-
 rules: [
-
-  { 
-    test: /\.less$/,
-    use: [ 
-      MiniCssExtractPlugin.loader,
-      'css-loader', 
-      'less-loader'
-  ],
-},
-
          {
-           test: /\.tsx?$/,
+           test: /\.ts?$/,
            use: 'ts-loader',
            exclude: /node_modules/,
+           enforce: 'pre',
          },
+
+         {
+          test: /\.js$/,
+          use: ["babel-loader"],
+          enforce: 'pre',
+          exclude: /node_modules/,
+        },
         
        ],
 
 },
-  
-
 optimization: {
-  minimize: true
+  minimize: false
 },
-
-resolve: {
-    extensions: [ '.tsx', '.ts', '.js' ],
-  },
-
-
 
 
 plugins: [
- 
-
-  new MiniCssExtractPlugin({
-
-    
-    filename: "/css/index.min.css",
-   
-
-
+  new SourceMapDevToolPlugin({
+    filename: "[file].map"
   }),
+]
 
-],
+
 
 
 

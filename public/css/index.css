@@ -1,0 +1,49 @@
+* {
+  color: #f96e46;
+  text-align: center;
+}
+#body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: #545863;
+  align-content: center;
+  justify-content: center;
+}
+.Container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #00e8fc;
+  align-content: center;
+  justify-content: center;
+  margin: 10% 10% 0 10% ;
+}
+.buttonContainer {
+  margin-top: 3%;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.allButtons {
+  background-color: #f9c846;
+  font-size: larger;
+}
+.weatherOuterContainer {
+  background-color: #ffe3e3;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.weatherInnerContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}

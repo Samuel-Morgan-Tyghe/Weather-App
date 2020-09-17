@@ -2,26 +2,70 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link  href="index.min.css">
-    <script type="text/javascript" src="City.js"></script>
+    <link rel="stylesheet" type="text/css" href="public\css\index.css">  
+    <!-- <script type="text/javascript" src="City.js"></script>
     <script type="text/javascript" src="WeatherDay.js"></script>
-    </script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="index.js"></script> -->
+    
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <title>Document</title>
 </head>
-<body>
-    <button onclick=passCity(event)  >Edinburgh</button>
-    <button onclick=passCity(event)  >Bath</button>
-    <button onclick=passCity(event)  >Barcelona</button>
-    <p id="demo" class="test">Showing Weather forecast for <p id="weatherLocation"></p></p>
-    <div>
+<body id='body'onload=time()>
+    <div class="Container">
+        <div class="buttonContainer">
+
+
+    <button class="allButtons"  >Edinburgh</button>
+    <button class="allButtons"  >Bath</button>
+    <button class="allButtons"  >Barcelona</button>
+    </div>
+
+    
+    
+    <p id="demo" class="lead text-muted">Showing Weather forecast for    <div id="todaysdate"></div>        <p id="weatherLocation"></p></p>    <div id="todaysdate"></div>
+
+    <div class="weatherOuterContainer">
+    <div class="weatherInnerContainer">
         <div id="i1"></div>
         <div id="i2"></div>
         <div id="i3"></div>
         <div id="i4"></div>
-        <div id="i5"><div>
+        <img id="i5"><img>
+    </div>
+    <div class="weatherInnerContainer">
+        <div id="i6"></div>
+        <div id="i7"></div>
+        <div id="i8"></div>
+        <div id="i9"></div>
+        <img id="i10"><img>
 
     </div>
+    <div class="weatherInnerContainer">
+        <div id="i11"></div>
+        <div id="i12"></div>
+        <div id="i13"></div>
+        <div id="i14"></div>
+        <img id="i15"><img>
+
+    </div>
+    <div class="weatherInnerContainer">
+        <div id="i16"></div>
+        <div id="i17"></div>
+        <div id="i18"></div>
+        <div id="i19"></div>
+        <img id="i20"><img>
+
+    </div>
+    </div>
+    
+</div>
 
 </body>
+<script type="text/JavaScript" src ="public\js\index.min.js"></script>    
+<script src="public/js/index.min.js"></script>
+
+    <script type="text/JavaScript" src ="moment.js"></script> 
+    <script type="text/JavaScript" src ="time.js"></script> 
 </html>
