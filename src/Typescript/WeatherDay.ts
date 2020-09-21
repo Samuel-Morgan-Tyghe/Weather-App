@@ -15,7 +15,6 @@ export async function weatherData(api : string) {
         axios.get(api)
             .then((response: any) => {
                 for (i = 0; i <= 3; i++) {
-                    console.log(response.data['city']['name'])
                     var nameValue = response.data['city']['name']
             
                     var tempValue = response.data['list'][i.toString()]['main']['temp']
