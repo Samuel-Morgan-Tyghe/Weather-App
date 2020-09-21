@@ -11,4 +11,4 @@ https://samuel-morgan-tyghe.github.io/Weather-App/
 * Promises can help speed loading times as it allows parallel programing
 
 # What I Can Improve
-* Try Writing Object-Oriented Programming
+* Write Object-Oriented Programming
