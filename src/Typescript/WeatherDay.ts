@@ -35,7 +35,7 @@ export async function weatherData(api : string) {
                     indexOf++
                     document.getElementById("i" + indexOf.toString()).innerHTML = descValue
                     indexOf++
-                    (<HTMLImageElement>document.getElementById("i" + indexOf.toString())).src = 'http://openweathermap.org/img/wn/' + iconValue + '@2x.png'
+                    (<HTMLImageElement>document.getElementById("i" + indexOf.toString())).src = 'https://openweathermap.org/img/wn/' + iconValue + '@2x.png'
                     indexOf++
                     if (indexOf > 20) { indexOf = 1 }
    
