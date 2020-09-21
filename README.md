@@ -6,7 +6,7 @@ An App for checking the Weather in 3 different cities.This project introduced ne
 * Typescript Fundamentals
 * I prefer to use Sass than Less, Sass has more functionality, is clearer to read and to use.
 * Bootstrap can speed things up and has some really useful features (maybe it will grow on me) but for now i like to have total control of css 
-* Promises can help speed loading times as it allows parrelel 
+* Promises can help speed loading times as it allows parralel programing
 
 # What I Can Improve
 OOP
