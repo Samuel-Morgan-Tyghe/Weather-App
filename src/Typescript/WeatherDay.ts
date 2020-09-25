@@ -5,50 +5,49 @@
 // // sun/cloud
 import axios from 'axios'
 
-export async function weatherData(api : string) {
-    let indexOf = 1
-    let i = 0
 
-    
 
-    try {
-        axios.get(api)
-            .then((response: any) => {
-                for (i = 0; i <= 3; i++) {
-                    var nameValue = response.data['city']['name']
+    export function getWeatherData(api : string) {
             
-                    var tempValue = response.data['list'][i.toString()]['main']['temp']
-            
-                    var dateValue = response.data['list'][i.toString()]['dt_txt']
-            
-                    var descValue = response.data['list'][i.toString()]['weather']['0']['description']
-            
-                    var iconValue = response.data['list'][i.toString()]['weather']['0']['icon']
-  
-    
-                    var tempValueC = (parseInt(tempValue) - 273.15).toFixed(0) //Kelvin To Celsius
-                    document.getElementById("i" + indexOf.toString()).innerHTML = nameValue
-                    indexOf++
-                    document.getElementById("i" + indexOf.toString()).innerHTML = tempValueC + 'C'
-                    indexOf++
-                    document.getElementById("i" + indexOf.toString()).innerHTML = dateValue
-                    indexOf++
-                    document.getElementById("i" + indexOf.toString()).innerHTML = descValue
-                    indexOf++
-                    (<HTMLImageElement>document.getElementById("i" + indexOf.toString())).src = 'https://openweathermap.org/img/wn/' + iconValue + '@2x.png'
-                    indexOf++
-                    if (indexOf > 20) { indexOf = 1 }
-   
-                } i = 0
+        return axios.get(api)
+        .then(function (response) {
+            return response.data
+        })
+        .catch(function(error){
+           console.log(error)
+        })
+        }
 
-            })
-    
-        return api
-    
-    } catch (error) {
-        alert(error)
+
+
+
+export function addDataToDivs(weatherData: any) {
+    let li = document.getElementsByClassName("weatherInnerContainer")
+    let nI = li.length
+    for (var i = 0; i < nI; i++) {
+
+        let tempInC = ((parseInt(weatherData['list'][i.toString()]['main']['temp'])) - 273.15).toFixed(0)
+        var tempDiv = document.createElement('div')
+        tempDiv.innerText = tempInC
+        li[i].appendChild(tempDiv)
+
+        var nameDiv = document.createElement('div')
+        nameDiv.innerText = weatherData['city']['name']
+        li[i].appendChild(nameDiv)
+
+        var timeDiv = document.createElement('div')
+        timeDiv.innerText = weatherData['list'][i.toString()]['dt_txt']
+        li[i].appendChild(timeDiv)
+
+        var descDiv = document.createElement('div')
+        descDiv.innerText = weatherData['list'][i.toString()]['weather']['0']['description']
+        li[i].appendChild(descDiv)
+
+        let iconDiv = document.createElement('img')
+        let iconValue = (weatherData['list'][i.toString()]['weather']['0']['icon']).toString()
+        let iconLink = 'https://openweathermap.org/img/wn/' + iconValue + '@2x.png'
+        iconDiv.src = iconLink
+        li[i].appendChild(iconDiv)
+
     }
 }
-
-
-    
