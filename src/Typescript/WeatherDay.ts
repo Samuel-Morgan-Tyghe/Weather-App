@@ -28,8 +28,8 @@ export function addDataToDivs(weatherData: any) {
 
         let tempInC = ((parseInt(weatherData['list'][i.toString()]['main']['temp'])) - 273.15).toFixed(0)
         let tempDiv = document.createElement('div')
-        tempDiv.innerText = tempInC
-        li[i].appendChild(tempDiv)
+        tempDiv.innerText = tempInC + 'C'
+        li[i].appendChild(tempDiv )
 
         let nameDiv = document.createElement('div')
         nameDiv.innerText = weatherData['city']['name']
