@@ -24,22 +24,22 @@ import axios from 'axios'
 export function addDataToDivs(weatherData: any) {
     let li = document.getElementsByClassName("weatherInnerContainer")
     let nI = li.length
-    for (var i = 0; i < nI; i++) {
+    for (let i = 0; i < nI; i++) {
 
         let tempInC = ((parseInt(weatherData['list'][i.toString()]['main']['temp'])) - 273.15).toFixed(0)
-        var tempDiv = document.createElement('div')
+        let tempDiv = document.createElement('div')
         tempDiv.innerText = tempInC
         li[i].appendChild(tempDiv)
 
-        var nameDiv = document.createElement('div')
+        let nameDiv = document.createElement('div')
         nameDiv.innerText = weatherData['city']['name']
         li[i].appendChild(nameDiv)
 
-        var timeDiv = document.createElement('div')
+        let timeDiv = document.createElement('div')
         timeDiv.innerText = weatherData['list'][i.toString()]['dt_txt']
         li[i].appendChild(timeDiv)
 
-        var descDiv = document.createElement('div')
+        let descDiv = document.createElement('div')
         descDiv.innerText = weatherData['list'][i.toString()]['weather']['0']['description']
         li[i].appendChild(descDiv)
 
