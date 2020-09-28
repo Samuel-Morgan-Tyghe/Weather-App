@@ -9,7 +9,26 @@ import { dataToDivs } from './WeatherDay'
 import { getCity } from './City'
 import { getApi } from './City'
 
-var howManyReadings = 7
+
+let howManyReadings = 7
+
+
+
+
+  function main() {
+    var city = getCity()
+    var api = getApi(city)
+  
+    
+    getWeatherData(api).then(weatherData => {
+      clearDivs()
+      addContainerDivs(howManyReadings)
+      let dataArray = dataToDivs(weatherData, howManyReadings)
+      appendDataToDiv(dataArray)
+    })
+  }
+
+  
 
 
 document.querySelectorAll('.allButtons').forEach(item => {
@@ -17,19 +36,11 @@ document.querySelectorAll('.allButtons').forEach(item => {
       main()
     })
 })
-  
-function main() {
-  var city = getCity()
-  var api = getApi(city)
+
+
 
   
-  getWeatherData(api).then(weatherData => {
-    clearDivs()
-    addContainerDivs(howManyReadings)
-    let dataArray = dataToDivs(weatherData, howManyReadings)
-    appendDataToDiv(dataArray)
-  })
-}
+
 
 
 function clearDivs() {

@@ -21,6 +21,7 @@ import axios from 'axios'
 
 
 
+
 export function dataToDivs(weatherData: any, howManyReadings: any) {
 
     let dataArray = []
@@ -28,11 +29,11 @@ export function dataToDivs(weatherData: any, howManyReadings: any) {
         let j = 0
         let innerDataArray = []
 
-        
+        //open closed principle, add information or take it away without breaking outside functions, if img add source, if int parse to string
 
         let tempInC = ((parseInt(weatherData['list'][i.toString()]['main']['temp'])) - 273.15).toFixed(0)
         let tempDiv = document.createElement('div')
-        tempDiv.innerText = tempInC + 'C'
+        tempDiv.innerText = tempInC + '°C'
         innerDataArray[j] = tempDiv
         j++
 
@@ -57,6 +58,8 @@ export function dataToDivs(weatherData: any, howManyReadings: any) {
         iconDiv.src = iconLink
         innerDataArray[j] = iconDiv
         j++
+
+
 
         dataArray[i] = innerDataArray 
     }
