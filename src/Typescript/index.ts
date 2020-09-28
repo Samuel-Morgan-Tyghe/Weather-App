@@ -4,7 +4,8 @@
 // 7 WeatherDay objects -> render those 7 objects on the page
 import axios from 'axios'
 import { getWeatherData } from './WeatherDay'
-import { addDataToDivs } from './WeatherDay'
+import { appendDataToDiv } from './WeatherDay'
+import { dataToDivs } from './WeatherDay'
 import { getCity } from './City'
 import { getApi } from './City'
 
@@ -24,8 +25,9 @@ function main() {
   
   getWeatherData(api).then(weatherData => {
     clearDivs()
-    addDivs(howManyReadings)
-    addDataToDivs(weatherData)
+    addContainerDivs(howManyReadings)
+    let dataArray = dataToDivs(weatherData, howManyReadings)
+    appendDataToDiv(dataArray)
   })
 }
 
@@ -38,7 +40,7 @@ function clearDivs() {
   }
 }
    
-function addDivs(howManyReadings: number) {
+function addContainerDivs(howManyReadings: number) {
   const myNode = document.getElementById("weatherOuterContainer")
   for (let i = 0; i < howManyReadings; i++) {
     myNode.appendChild (document.createElement('div')).classList.add("weatherInnerContainer")

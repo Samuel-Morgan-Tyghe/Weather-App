@@ -21,33 +21,60 @@ import axios from 'axios'
 
 
 
-export function addDataToDivs(weatherData: any) {
-    let li = document.getElementsByClassName("weatherInnerContainer")
-    let nI = li.length
-    for (let i = 0; i < nI; i++) {
+export function dataToDivs(weatherData: any, howManyReadings: any) {
+
+    let dataArray = []
+    for (let i = 0; i < howManyReadings; i++) {
+        let j = 0
+        let innerDataArray = []
+
+        
 
         let tempInC = ((parseInt(weatherData['list'][i.toString()]['main']['temp'])) - 273.15).toFixed(0)
         let tempDiv = document.createElement('div')
         tempDiv.innerText = tempInC + 'C'
-        li[i].appendChild(tempDiv )
+        innerDataArray[j] = tempDiv
+        j++
 
         let nameDiv = document.createElement('div')
         nameDiv.innerText = weatherData['city']['name']
-        li[i].appendChild(nameDiv)
+        innerDataArray[j] = nameDiv
+        j++
 
         let timeDiv = document.createElement('div')
         timeDiv.innerText = weatherData['list'][i.toString()]['dt_txt']
-        li[i].appendChild(timeDiv)
+        innerDataArray[j] = timeDiv
+        j++
 
         let descDiv = document.createElement('div')
         descDiv.innerText = weatherData['list'][i.toString()]['weather']['0']['description']
-        li[i].appendChild(descDiv)
+        innerDataArray[j] = descDiv
+        j++
 
         let iconDiv = document.createElement('img')
         let iconValue = (weatherData['list'][i.toString()]['weather']['0']['icon']).toString()
         let iconLink = 'https://openweathermap.org/img/wn/' + iconValue + '@2x.png'
         iconDiv.src = iconLink
-        li[i].appendChild(iconDiv)
+        innerDataArray[j] = iconDiv
+        j++
+
+        dataArray[i] = innerDataArray 
+    }
+   
+return dataArray
+}
+
+export function appendDataToDiv(dataArray: any) {
+    let li = document.getElementsByClassName("weatherInnerContainer")
+    let nI = li.length
+    for (let i = 0; i < nI; i++) {
+        for (let j = 0; j < dataArray[i].length; j++) {
+
+            li[i].appendChild(dataArray[i][j])
+
+        }
 
     }
+
+
 }
