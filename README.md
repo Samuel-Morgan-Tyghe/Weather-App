@@ -9,6 +9,7 @@ https://samuel-morgan-tyghe.github.io/Weather-App/
 * I prefer to use Sass than Less, Sass has more functionality, is clearer to read and to use.
 * Bootstrap can speed things up and have some useful features (maybe it will grow on me) but for now I would like to have total control of CSS 
 * Promises can help speed loading times as it allows parallel programing
+* OOP with Typescript
 
 # What I Can Improve
-* Write Object-Oriented Programming, SOLID, Clean Code etc
+* Better Aesthetics
