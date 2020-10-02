@@ -39,7 +39,7 @@ rules: [
 
 },
 optimization: {
-  minimize: false
+  minimize: true
 },
 
 
@@ -48,14 +48,5 @@ plugins: [
     filename: "[file].map"
   }),
 ]
-
-
-
-
-
-
-
-
-
 
 }
