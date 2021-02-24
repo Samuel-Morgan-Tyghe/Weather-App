@@ -35,7 +35,7 @@ class weatherReadings{
   constructor(weatherData: any, switchTimeOfData: any) {
     this.temp = weatherData['list'][switchTimeOfData.toString()]['main']['temp']
     // this.city = weatherData['city']['name']
-    // this.date = weatherData['list'][switchTimeOfData.toString()]['dt_txt']
+    this.date = weatherData['list'][switchTimeOfData.toString()]['dt_txt']
     this.description = weatherData['list'][switchTimeOfData.toString()]['weather']['0']['description']
     this.icon = weatherData['list'][switchTimeOfData.toString()]['weather']['0']['icon']
   }
