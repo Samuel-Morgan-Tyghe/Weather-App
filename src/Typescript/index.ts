@@ -2,14 +2,14 @@ import { getWeatherData } from './WeatherDay';
 import { getCity } from './City';
 import { getApi } from './City'
 
-let howManyReadings = 7
+let howManyReadings = 4
 
 function main() {
 
     var city = getCity()
     var api = getApi(city)
   
-  getWeatherData(api).then(weatherData => {
+  getWeatherData(api).then((weatherData: any) => {
     clearDivs()
 
 
@@ -27,15 +27,15 @@ function main() {
 
 class weatherReadings{
   temp
-  city
-  date
+  city: any
+  date: any
   description
   icon
 
   constructor(weatherData: any, switchTimeOfData: any) {
     this.temp = weatherData['list'][switchTimeOfData.toString()]['main']['temp']
-    this.city = weatherData['city']['name']
-    this.date = weatherData['list'][switchTimeOfData.toString()]['dt_txt']
+    // this.city = weatherData['city']['name']
+    // this.date = weatherData['list'][switchTimeOfData.toString()]['dt_txt']
     this.description = weatherData['list'][switchTimeOfData.toString()]['weather']['0']['description']
     this.icon = weatherData['list'][switchTimeOfData.toString()]['weather']['0']['icon']
   }

@@ -6,112 +6,143 @@
 @color4: #1A2238;
 @color5: #F4DB7D;
 @color6: #FF6A3D;
-*{
+
+* {
   // color: @color5;
   text-align: center;
   font-family: 'Lato', sans-serif;
+  font-size: 1vw;
 }
+
 #body {
   display: flex;
   flex-direction: column;
-  width:100%;
-  height:100%;
+  width: 100vw;
+  height: 100vh;
   background-color: @color1;
   align-content: center;
   justify-content: center;
+  margin: auto;
 
 }
 
 
-.Container{
-  display: flex;
-  flex-direction: column;
-  height:100%;
+.Container {
+  // display: flex;
+  // flex-direction: column;
+  // height: 100%;
   // background-color: @color2;
   align-content: center;
   justify-content: center;
   margin: auto;
-  margin: 10% 10% 0 10% ;
-
+  // padding: 2vw
+  width:100%;
+  max-width: 1000px;
 
 }
-.innerContainer{
+
+.innerContainer {
+  
+  margin: auto;
   background-color: @color2;
   border-radius: 50px;
   color: @color3;
+  padding: 2vw;
+  width: 100%;
+}
+.textContainer{
+
+  padding: 1vw;
 
 }
 
-.buttonContainer{
+.textContainer, p, div {
+  margin: auto;
+  // padding: 1vw;
+  font-size: 20px;
+  //   display: flex;
+  //   // flex-direction: column;
+  //   align-items: center;
+  //   justify-content: space-evenly ;
+}
 
-    margin-top: 3%;
-    display:flex;
-    width:100%;
-    height:100%;
-    align-items: center;
-    justify-content: space-evenly ;
-    padding: 1vw;
-    color: @color5;
+.buttonContainer {
 
-  }
-    .allButtons{
-      background-color: @color4;
-      padding: 15px;
-      color: @color5;
+  margin-top: 3%;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 1vw;
+  color: @color5;
 
-      
-  
-     }
-     
+}
 
-.weatherOuterContainer{
+.allButtons {
+  background-color: @color4;
+  padding: 15px;
+  color: @color5;
+  font-size: 25px;
+  border-radius: 5px;
+
+
+}
+
+
+.weatherOuterContainer {
 
   background-color: @color5;
-  
-  display: flex;
-  flex-direction: row;
-  align-items: center;
 
-  width:100%;
-  height:100%;
+  display: flex;
+  // flex-direction: row-wrap;
+  align-items: center;
+  flex-flow: row-wrap;
+
+  width: 100%;
+  height: 100%;
   border-radius: 50px;
 
 }
- 
-.weatherInnerContainer{
+
+.weatherInnerContainer {
   background-color: @color5;
   color: @color1;
   display: flex;
   align-items: center;
   flex-direction: column;
-  width:100%;
-  height:100%;
+  flex-flow: row-wrap;
+  width: 100%;
+  min-width: 200px;
+  height: 100%;
   border-radius: 50px;
   padding: 10px;
   margin-top: 15px;
   margin-bottom: 15px;
-} 
-  div {
+}
 
-  // margin-top: 15px;
-  // margin-bottom: 15px;
+// div {
 
-  }
-.weatherInnerContainer :first-child{
+// // margin-top: 15px;
+// // margin-bottom: 15px;
+
+// }
+.weatherInnerContainer :first-child {
 
   font-size: 50px;
 }
-.weatherInnerContainer :nth-child(2){
+
+.weatherInnerContainer :nth-child(2) {
 
   font-size: 20px;
-  }
-
-.weatherInnerContainer :nth-child(3){
-
-font-size: 30px;
 }
 
-.weatherInnerContainer :nth-child(4){
+.weatherInnerContainer :nth-child(3) {
+
+  font-size: 30px;
+}
+
+.weatherInnerContainer :nth-child(4) {
 
   font-style: italic;
 }
