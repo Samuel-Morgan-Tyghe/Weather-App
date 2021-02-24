@@ -1,13 +1,13 @@
 * {
-  color: #f96e46;
   text-align: center;
+  font-family: 'Lato', sans-serif;
 }
 #body {
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
-  background-color: #545863;
+  background-color: #1A2238;
   align-content: center;
   justify-content: center;
 }
@@ -15,10 +15,15 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  background-color: #00e8fc;
   align-content: center;
   justify-content: center;
+  margin: auto;
   margin: 10% 10% 0 10% ;
+}
+.innerContainer {
+  background-color: #9DAAF2;
+  border-radius: 50px;
+  color: #ffffff;
 }
 .buttonContainer {
   margin-top: 3%;
@@ -27,25 +32,35 @@
   height: 100%;
   align-items: center;
   justify-content: space-evenly;
+  padding: 1vw;
+  color: #F4DB7D;
 }
 .allButtons {
-  background-color: #f9c846;
-  font-size: larger;
+  background-color: #1A2238;
+  padding: 15px;
+  color: #F4DB7D;
 }
 .weatherOuterContainer {
-  background-color: #ffe3e3;
+  background-color: #F4DB7D;
   display: flex;
   flex-direction: row;
   align-items: center;
   width: 100%;
   height: 100%;
+  border-radius: 50px;
 }
 .weatherInnerContainer {
+  background-color: #F4DB7D;
+  color: #1A2238;
   display: flex;
   align-items: center;
   flex-direction: column;
   width: 100%;
   height: 100%;
+  border-radius: 50px;
+  padding: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 .weatherInnerContainer :first-child {
   font-size: 50px;
